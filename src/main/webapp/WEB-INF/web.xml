@@ -18,7 +18,7 @@
 	</filter-mapping>
 	<!-- [ ContextLoaderListener ] applicationContext.xml(공유객체설정) 파일의 정보를 읽어와 
 		Bean객체를 생성해줌 -->
-	<listener>
+	<listener><!-- MVC를 제외한 정보가 담겨있는 xml을 만들어줌=applicationContext -->
 		<listener-class>org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>

@@ -8,6 +8,7 @@
 </head>
 <body>
 <ul>
+	<li><a href="${pageContext.request.contextPath}/login">로그인</a></li>
 	<li><a href="${pageContext.request.contextPath}/insert">회원가입</a></li>
 	<li><a href="${pageContext.request.contextPath}/list">회원목록</a></li>
 </ul>

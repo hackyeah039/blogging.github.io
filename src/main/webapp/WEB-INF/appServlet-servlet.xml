@@ -4,9 +4,9 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- MVC에 관한건 여기다가 (controller,viewResolver,요청과 응답에관한걸 설정) -->
 	<context:annotation-config/> <!-- 설정되고나서~ 적용이됨 순서중요! 그래야지 autowired먹음 -->
-	<!-- controller,viewResolver,요청과 응답에관한걸 설정 -->
-	<!-- MVC에 관한건 여기다가  -->
+	<!-- 자동으로 Controller패키지 안에있는 객체들을 인식해서 만들어줌.@Controller -->
 	<context:component-scan base-package="com.jhta.spring08.controller"/>
 	
 	

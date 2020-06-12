@@ -21,7 +21,7 @@
 	 <!-- sqlSessionFactoryBean (datasource,Mapper XML파일)-->
 	 <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	 	<property name="dataSource" ref="dataSource"/>
-	 	<property name="mapperLocations" value="classpath*:mybatis/MembersMapper.xml"/>
+	 	<property name="mapperLocations" value="classpath*:mybatis/*.xml"/> <!-- 매퍼가 아닌 다른 xml파일이 있으면 오류난다. 만약 여러테이블이 여러개일경우 등록여러개할수 없으니 --> 
 	 </bean>
 	 <!-- sqlSessionTemplate (sqlSessionFactoryBean 주입 -> 생성자) -->
 	 <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
