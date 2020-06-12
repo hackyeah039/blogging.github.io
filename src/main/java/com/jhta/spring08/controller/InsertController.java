@@ -1,5 +1,6 @@
 package com.jhta.spring08.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,10 +10,9 @@ import test.vo.MembersVo;
 
 @Controller
 public class InsertController {
+	@Autowired
 	private MembersService service;
-	public void setService(MembersService service) {
-		this.service = service;
-	}
+	
 	@RequestMapping("/insert")
 	public String execute() {
 		return "insert";

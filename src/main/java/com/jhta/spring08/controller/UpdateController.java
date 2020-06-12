@@ -1,5 +1,6 @@
 package com.jhta.spring08.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -8,22 +9,16 @@ import test.service.MembersService;
 import test.vo.MembersVo;
 @Controller
 public class UpdateController {
+	@Autowired
 	private MembersService service;
 	
-	public void setService(MembersService service) {
-		this.service = service;
-	}
 	@RequestMapping("/realUpdate")
-	public ModelAndView realUpdate(MembersVo vo) {
-		ModelAndView mv = new ModelAndView();
+	public String realUpdate(MembersVo vo) {
 		if(vo==null) {
-			mv.setViewName("update");
-			return mv;
+			return "error";
 		}else {
-			int result=service.update(vo);
-			mv.addObject("result", result);
-			mv.setViewName("updateResult");
-			return mv;
+			int n=service.update(vo);
+			return "redirect:/list"; //컨트롤러로 이동
 		}
 	}
 	@RequestMapping("/update")

@@ -2,6 +2,7 @@ package com.jhta.spring08.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,10 +13,9 @@ import test.vo.MembersVo;
 
 @Controller
 public class ListController {
+	@Autowired
 	private MembersService service;
-	public void setService(MembersService service) {
-		this.service = service;
-	}
+	
 	@RequestMapping("/list")
 	public ModelAndView list() {
 		ModelAndView mv = new ModelAndView();

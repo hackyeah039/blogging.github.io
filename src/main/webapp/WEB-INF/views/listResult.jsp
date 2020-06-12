@@ -8,27 +8,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<tr>
-	<th>회원번호</th>
-	<th>회원이름</th>
-	<th>전화번호</th>
-	<th>주소</th>
-	<th>가입일자</th>
-	<th>삭제</th>
-	<th>수정</th>
-</tr>
-<c:forEach items="${list }" var="list">
-<tr>
-	<td><option>${list.num}</option></td>
-	<td><option>${list.name}</option></td>
-	<td><option>${list.phone}</option></td>
-	<td><option>${list.addr}</option></td>
-	<td><option>${list.regdate}</option></td>
-	<td><a href="${pageContext.request.contextPath}/delete?num=${list.num}">삭제</a></td>
-	<th><a href="${pageContext.request.contextPath}/update?num=${list.num}">수정</a></th>
-</tr>
-</c:forEach>
-</table>
+	<table>
+		<tr>
+			<th>회원번호</th>
+			<th>회원이름</th>
+			<th>전화번호</th>
+			<th>주소</th>
+			<th>가입일자</th>
+			<th>삭제</th>
+			<th>수정</th>
+		</tr>
+		<c:forEach items="${list }" var="list">
+		<tr>
+			<td><option>${list.num}</option></td>
+			<td><option>${list.name}</option></td>
+			<td><option>${list.phone}</option></td>
+			<td><option>${list.addr}</option></td>
+			<td><option>${list.regdate}</option></td>
+			<td><a href="${pageContext.request.contextPath}/delete?num=${list.num}">삭제</a></td>
+			<th><a href="${pageContext.request.contextPath}/update?num=${list.num}">수정</a></th>
+		</tr>
+		</c:forEach>
+	</table>
+	<h1><a href="${pageContext.request.contextPath}/">메인으로 </a></h1>
+	
 </body>
 </html>
