@@ -1,5 +1,6 @@
 package com.jhta.spring08.controller;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class LoginController {
 	public String loginForm() {
 		return "login";
 	}
-	@RequestMapping(method=RequestMethod.POST, value="/login") //순서는 상관 없음,이건 doPost
+	@RequestMapping(method=RequestMethod.POST, value="/reallogin") //순서는 상관 없음,이건 doPost
 	public String login(String id,String pwd,HttpSession session) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
@@ -32,6 +33,18 @@ public class LoginController {
 			return "redirect:/";//메인페이지로 이동
 		}else {
 			return "login";//로그인 페이지로 이동
+		}
+	}
+	
+	@RequestMapping(value="logout",method= RequestMethod.GET)
+	public String logout(HttpSession session) {
+		Enumeration se = session.getAttributeNames();
+
+		if(se.hasMoreElements()) {
+			session.invalidate();
+			return "redirect:/";
+		}else {
+			return "error";
 		}
 	}
 	
